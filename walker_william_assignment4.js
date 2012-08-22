@@ -29,6 +29,7 @@ var library = function () {
 			return false;
 		}
 	};
+	
 	//String Function
 	var validateUrl = function(http){ 	
 	var urlStrg1 = /^http:/;
@@ -41,3 +42,10 @@ var library = function () {
 			alert("URL must start with http: or https:");
 			return false;
 		}
+	//String Function
+		 var changeUpCase = function (string) {
+	    return string.toLowerCase().replace(/\b[a-z]/g, convert);
+        function convert() {
+            return arguments[0].toUpperCase();
+        }
+    };
