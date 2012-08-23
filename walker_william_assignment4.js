@@ -49,3 +49,31 @@ var library = function () {
             return arguments[0].toUpperCase();
         }
     };
+    
+    };
+	//Date Function
+	var getTimeDifference = function(laterdate,earlierdate) {
+		var timeDifference;
+		var difference = laterdate.getTime() - earlierdate.getTime();
+		var daysDifference = Math.floor(difference/1000/60/60/24);  
+		difference -= daysDifference*1000*60*60*24
+		var hoursDifference = Math.floor(difference/1000/60/60);
+		difference -= hoursDifference*1000*60*60  
+		timeDifference = daysDifference + ' day\(s\) and ' + hoursDifference + ' hour\(s\) ';
+			return timeDifference;
+	}; 
+	
+	// Convert a number string into a number function .
+	var convertToNumber = function (strNumber) {
+	var number = parseInt(strNumber);
+	return number;
+	};
+	var calculateArray = function (givenArray) {
+		var total = 0;
+		for (var i = 0; i < givenArray.length; i++) {  
+			if (!isNaN(givenArray[i])){
+			total += parseInt(givenArray[i]);
+			}
+		}
+		return total;
+	};
