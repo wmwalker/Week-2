@@ -4,7 +4,7 @@
 //JavaScript Library
 
 
-//String Function
+// Check Phone Number Function (String)
 var library = function () {
 	var checkPhoneNumber = function (phoneNum) {
 		var phonePattrn1= /^\f\f\f-\f\f\f-\f\f\f\f$/; 
@@ -17,7 +17,7 @@ var library = function () {
 			return false;      
 		}
 	};
-	
+	//Email Validation Function (String)
 	var validateEmail = function(elementValue){ 
 		var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 		if (emailPattern.test(elementValue)) {
@@ -50,7 +50,6 @@ var library = function () {
         }    
     };
     
-    };
 	//Date Function
 	var getTimeDifference = function(laterdate,earlierdate) {
 		var timeDifference;
@@ -78,33 +77,16 @@ var library = function () {
 		return total;
 	};
 	
-	//Array Function
-	var sortArray = function(givenArray)
-    {
-        givenArray.sort(compareKeys);
-        return newOrder(givenArray);    
-    }
-
-    function compareKeys(key1, key2)
-    {
-        if (key1.a > key2.a) return 1;
-        else return -1;
-    }
-    
-    function newOrder(array)
-    {
-        var string ="";
-        for (var i = 0; i < array.length; i++)
-            string+= " {a: "+array[i].a+"} ";
-        return "[ "+string+" ]";
+	
     }
     return {
 		"checkPhoneNumber" : checkPhoneNumber,
 		"validateEmail" : validateEmail,
+		"validateUrl" : validateUrl,
 		"changeUpCase" : changeUpCase,
 		"getTimeDifference" : getTimeDifference,
 		"convertToNumber" : convertToNumber,
-		"calculateArray" : calculateArray,
+		
 
     //Test/Results of functions
 /*
@@ -112,18 +94,18 @@ var lib = library();
 var phNum= lib.checkPhoneNumber("(270)206-4484");  
 console.log(phNum);
 
-var chkEmail= lib.validateEmail("brandi@charter.net.info");
+var chkEmail= lib.validateEmail("randi@charter.net.info");
 console.log(chkEmail);
+
+var retUrl = lib.validateUrl("https://www.google.com");
+console.log(retUrl);
 
 var showCase= lib.changeUpCase("join the party?");
 console.log(showCase);
 
-var timeDiff =lib.getTimeDifference(new Date(2000,0,1),new Date(1996,2,13));
+var timeDiff =lib.getTimeDifference(new Date(2005,1,1),new Date(1985,1,22));
 console.log(timeDiff);
 
 var convToNum= lib.convertToNumber("42368");
 console.log(convToNum);
-
-var seeArr = lib.sortArray([{a:2},{a:54},{a:1},{a:3},{a:4}]);
-	console.log(seeArr);
 */
