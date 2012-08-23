@@ -47,7 +47,7 @@ var library = function () {
 	    return string.toLowerCase().replace(/\b[a-z]/g, convert);
         function convert() {
             return arguments[0].toUpperCase();
-        }
+        }    
     };
     
     };
@@ -77,3 +77,53 @@ var library = function () {
 		}
 		return total;
 	};
+	
+	//Array Function
+	var sortArray = function(givenArray)
+    {
+        givenArray.sort(compareKeys);
+        return newOrder(givenArray);    
+    }
+
+    function compareKeys(key1, key2)
+    {
+        if (key1.a > key2.a) return 1;
+        else return -1;
+    }
+    
+    function newOrder(array)
+    {
+        var string ="";
+        for (var i = 0; i < array.length; i++)
+            string+= " {a: "+array[i].a+"} ";
+        return "[ "+string+" ]";
+    }
+    return {
+		"checkPhoneNumber" : checkPhoneNumber,
+		"validateEmail" : validateEmail,
+		"changeUpCase" : changeUpCase,
+		"getTimeDifference" : getTimeDifference,
+		"convertToNumber" : convertToNumber,
+		"calculateArray" : calculateArray,
+
+    //Test/Results of functions
+/*
+var lib = library();
+var phNum= lib.checkPhoneNumber("(270)206-4484");  
+console.log(phNum);
+
+var chkEmail= lib.validateEmail("brandi@charter.net.info");
+console.log(chkEmail);
+
+var showCase= lib.changeUpCase("join the party?");
+console.log(showCase);
+
+var timeDiff =lib.getTimeDifference(new Date(2000,0,1),new Date(1996,2,13));
+console.log(timeDiff);
+
+var convToNum= lib.convertToNumber("42368");
+console.log(convToNum);
+
+var seeArr = lib.sortArray([{a:2},{a:54},{a:1},{a:3},{a:4}]);
+	console.log(seeArr);
+*/
